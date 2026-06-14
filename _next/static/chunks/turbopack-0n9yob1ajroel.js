@@ -7,7 +7,7 @@
     let t = "/_next/",
         r = function() {
             if (null != self.TURBOPACK_ASSET_SUFFIX) return self.TURBOPACK_ASSET_SUFFIX;
-            let e = document ? .currentScript ? .getAttribute ? .("src") ? ? "",
+            let e = document ?.currentScript ?.getAttribute ?.("src") ?? "",
                 t = e.indexOf("?");
             return t >= 0 ? e.slice(t) : ""
         }(),
@@ -317,7 +317,7 @@
         return M(i.Parent, this.m.id, e)
     }, S.R = function(e) {
         let t = this.r(e);
-        return t ? .default ? ? t
+        return t ?.default ?? t
     }, S.P = function(e) {
         return `/ROOT/${e??""}`
     }, S.q = function(e, t) {
@@ -411,7 +411,7 @@
                         break
                     }
                 }
-                let l = n ? ? i,
+                let l = n ?? i,
                     s = !1;
                 for (let n = r; n < o; n++) {
                     let r = e[n];
