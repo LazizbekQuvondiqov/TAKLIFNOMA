@@ -568,7 +568,7 @@
     }) {
         if (n) {
             let t = n.getStore();
-            if (t ? .isStaticGeneration) throw e && console.error(e), e
+            if (t ?.isStaticGeneration) throw e && console.error(e), e
         }
     }("function" == typeof r.default || "object" == typeof r.default && null !== r.default) && void 0 === r.default.__esModule && (Object.defineProperty(r.default, "__esModule", {
         value: !0
@@ -744,7 +744,7 @@ body { margin: 0; color: var(--next-error-text); background: var(--next-error-bg
         i = function({
             error: e
         }) {
-            let t = e ? .digest,
+            let t = e ?.digest,
                 r = !!t;
             return (0, o.handleISRError)({
                 error: e

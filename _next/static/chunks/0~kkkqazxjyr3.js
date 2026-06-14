@@ -1493,7 +1493,7 @@
                 })
             }, this.unstable_retry = () => {
                 (0, i.startTransition)(() => {
-                    this.context ? .refresh(), this.reset()
+                    this.context ?.refresh(), this.reset()
                 })
             }, this.state = {
                 error: null,
@@ -1802,7 +1802,7 @@
     }
 
     function s(e) {
-        return e.headers.get(i.NEXT_REWRITTEN_PATH_HEADER) ? ? p(new URL(e.url)).pathname
+        return e.headers.get(i.NEXT_REWRITTEN_PATH_HEADER) ?? p(new URL(e.url)).pathname
     }
 
     function c(e) {
@@ -1903,7 +1903,7 @@
         return {
             pathToSegment: l.slice(0, -1),
             segmentPath: l,
-            segment: l[l.length - 1] ? ? "",
+            segment: l[l.length - 1] ?? "",
             tree: t,
             seedData: r,
             head: n,
@@ -2025,7 +2025,7 @@
     }
 
     function o(e, t, r, n) {
-        return (void 0 === e || "0" === e) && void 0 === t && void 0 === r && void 0 === n ? null : [e ? ? "0", i(t), i(r), i(n)].join(",")
+        return (void 0 === e || "0" === e) && void 0 === t && void 0 === r && void 0 === n ? null : [e ?? "0", i(t), i(r), i(n)].join(",")
     }
     async function s(e) {
         var t = new Uint8Array(await globalThis.crypto.subtle.digest("SHA-256", u.encode(e))).subarray(0, 12);
@@ -2062,7 +2062,7 @@
     let l = e.r(14811),
         u = e.r(76280);
     async function i(e) {
-        return "function" == typeof globalThis.crypto ? .subtle ? .digest ? (0, l.computeCacheBustingSearchParam)(e[u.NEXT_ROUTER_PREFETCH_HEADER], e[u.NEXT_ROUTER_SEGMENT_PREFETCH_HEADER], e[u.NEXT_ROUTER_STATE_TREE_HEADER], e[u.NEXT_URL]) : (0, l.computeLegacyCacheBustingSearchParam)(e[u.NEXT_ROUTER_PREFETCH_HEADER], e[u.NEXT_ROUTER_SEGMENT_PREFETCH_HEADER], e[u.NEXT_ROUTER_STATE_TREE_HEADER], e[u.NEXT_URL])
+        return "function" == typeof globalThis.crypto ?.subtle ?.digest ? (0, l.computeCacheBustingSearchParam)(e[u.NEXT_ROUTER_PREFETCH_HEADER], e[u.NEXT_ROUTER_SEGMENT_PREFETCH_HEADER], e[u.NEXT_ROUTER_STATE_TREE_HEADER], e[u.NEXT_URL]) : (0, l.computeLegacyCacheBustingSearchParam)(e[u.NEXT_ROUTER_PREFETCH_HEADER], e[u.NEXT_ROUTER_SEGMENT_PREFETCH_HEADER], e[u.NEXT_ROUTER_STATE_TREE_HEADER], e[u.NEXT_URL])
     }
     let o = async (e, t) => {
             s(e, await i(t))
@@ -2850,7 +2850,7 @@
                                                                     let u = c[a],
                                                                         o = u.segment,
                                                                         f = s[a],
-                                                                        d = f ? .[0];
+                                                                        d = f ?.[0];
                                                                     if (0 === (void 0 !== d && L(n, o, d) ? e(t, r, n, f, u) : function e(t, r, n, a) {
                                                                             if (a.prefetchHints & l.PrefetchHint.HasRuntimePrefetch) return null === r.spawnedRuntimePrefetches ? r.spawnedRuntimePrefetches = new Set([a.requestKey]) : r.spawnedRuntimePrefetches.add(a.requestKey), 2;
                                                                             let u = (0, i.readOrCreateSegmentCacheEntry)(t, r.fetchStrategy, a);
@@ -2897,7 +2897,7 @@
                                                                 let u = d[a],
                                                                     p = u.segment,
                                                                     y = f[a],
-                                                                    g = y ? .[0];
+                                                                    g = y ?.[0];
                                                                 if (void 0 !== g && L(n, p, g)) {
                                                                     let l = e(t, r, n, y, u, o, c);
                                                                     h[a] = l
@@ -3507,7 +3507,7 @@
 
     function d(e) {
         (0, o.startTransition)(() => {
-            s ? .setOptimisticLinkStatus(f), e ? .setOptimisticLinkStatus(c), s = e
+            s ?.setOptimisticLinkStatus(f), e ?.setOptimisticLinkStatus(c), s = e
         })
     }
 
@@ -4337,7 +4337,7 @@
     }
 
     function ea(e, t, r, n, a, l, u) {
-        let i = (0, c.getRenderedSearchFromVaryPath)(n) ? ? "";
+        let i = (0, c.getRenderedSearchFromVaryPath)(n) ?? "";
         return t.status = 2, t.tree = r, t.metadata = en(n), t.staleAt = e + _.STATIC_STALETIME_MS, t.couldBeIntercepted = a, t.canonicalUrl = l, t.renderedSearch = i, t.supportsPerSegmentPrefetching = u, t.hasDynamicRewrite = !1, er(t), t
     }
 
@@ -4378,7 +4378,7 @@
 
     function ed(e, t, r, n, a) {
         let l, u, i, o, s = e[0],
-            f = e[2] ? ? null,
+            f = e[2] ?? null,
             d = null !== f ? {
                 canonicalUrl: f[0],
                 renderedSearch: f[1]
@@ -4408,7 +4408,7 @@
             varyPath: o,
             isPage: i,
             slots: p,
-            prefetchHints: e[4] ? ? 0
+            prefetchHints: e[4] ?? 0
         }
     }
     async function eh(e, t) {
@@ -4438,7 +4438,7 @@
                 let f = await (0, o.createFromNextReadableStream)(i, l, {
                     allowPartialStream: !0
                 });
-                if ((t.headers.get(O.NEXT_NAV_DEPLOYMENT_ID_HEADER) ? ? f.buildId) !== (0, T.getNavigationBuildId)()) return eo(e, Date.now() + 1e4), null;
+                if ((t.headers.get(O.NEXT_NAV_DEPLOYMENT_ID_HEADER) ?? f.buildId) !== (0, T.getNavigationBuildId)()) return eo(e, Date.now() + 1e4), null;
                 let d = (0, h.getRenderedPathname)(t),
                     g = (0, h.getRenderedSearch)(t),
                     v = {
@@ -4484,7 +4484,7 @@
                 let c = await (0, o.createFromNextReadableStream)(n, l, {
                     allowPartialStream: !0
                 });
-                if ((t.headers.get(O.NEXT_NAV_DEPLOYMENT_ID_HEADER) ? ? c.b) !== (0, T.getNavigationBuildId)()) return eo(e, Date.now() + 1e4), null;
+                if ((t.headers.get(O.NEXT_NAV_DEPLOYMENT_ID_HEADER) ?? c.b) !== (0, T.getNavigationBuildId)()) return eo(e, Date.now() + 1e4), null;
                 let f = c.h,
                     d = null !== f ? (0, u.readVaryParams)(f) : null;
                 ! function(e, t, r, n, a, l, u, o, s, c, f) {
@@ -4503,7 +4503,7 @@
                     if (null === R) return eo(a, e + 1e4);
                     (0, S.discoverKnownRoute)(e, c, f, a, E, R, l, u, o, !1);
                     let T = (0, b.convertServerPatchToFullTree)(e, _, p, d, P.UnknownDynamicStaleTime);
-                    ev(e, t, p, r.headers.get(O.NEXT_NAV_DEPLOYMENT_ID_HEADER) ? ? n.b, v, s, eb(e, r), T, null)
+                    ev(e, t, p, r.headers.get(O.NEXT_NAV_DEPLOYMENT_ID_HEADER) ?? n.b, v, s, eb(e, r), T, null)
                 }(Date.now(), E.FetchStrategy.LoadingBoundary, t, c, e, A, _, N, d, r, a)
             }
             if (!A) {
@@ -4541,7 +4541,7 @@
             let s = await (0, o.createFromNextReadableStream)(l, f, {
                 allowPartialStream: !0
             });
-            if ((e.headers.get(O.NEXT_NAV_DEPLOYMENT_ID_HEADER) ? ? s.buildId) !== (0, T.getNavigationBuildId)()) return es(t, Date.now() + 1e4), null;
+            if ((e.headers.get(O.NEXT_NAV_DEPLOYMENT_ID_HEADER) ?? s.buildId) !== (0, T.getNavigationBuildId)()) return es(t, Date.now() + 1e4), null;
             let d = Date.now(),
                 h = d + A(s.staleTime),
                 y = ei(t, s.rsc, h, s.isPartial);
@@ -4575,7 +4575,7 @@
             let c = await (0, o.createFromNextReadableStream)(s, u, {
                 allowPartialStream: !0
             });
-            if ((t.headers.get(O.NEXT_NAV_DEPLOYMENT_ID_HEADER) ? ? c.tree.segment.buildId) !== (0, T.getNavigationBuildId)()) return e_(n, Date.now() + 1e4), null;
+            if ((t.headers.get(O.NEXT_NAV_DEPLOYMENT_ID_HEADER) ?? c.tree.segment.buildId) !== (0, T.getNavigationBuildId)()) return e_(n, Date.now() + 1e4), null;
             let f = Date.now();
             ! function e(t, r, n, a, l) {
                 let u = a.segment,
@@ -4667,7 +4667,7 @@
             }
             let [S, T] = await Promise.all([(0, o.createFromNextReadableStream)(e, f, {
                 allowPartialStream: !0
-            }), l.cacheData]), A = S.h, w = null !== A ? (0, u.readVaryParams)(A) : null, N = Date.now(), C = await eT(N, S.s, l), j = r === E.FetchStrategy.PPRRuntime && (T ? .isResponsePartial ? ? !1), M = l.headers.get(O.NEXT_NAV_DEPLOYMENT_ID_HEADER) ? ? S.b, D = (0, g.normalizeFlightData)(S.f);
+            }), l.cacheData]), A = S.h, w = null !== A ? (0, u.readVaryParams)(A) : null, N = Date.now(), C = await eT(N, S.s, l), j = r === E.FetchStrategy.PPRRuntime && (T ?.isResponsePartial ?? !1), M = l.headers.get(O.NEXT_NAV_DEPLOYMENT_ID_HEADER) ?? S.b, D = (0, g.normalizeFlightData)(S.f);
             if ("string" == typeof D) return e_(a, Date.now() + 1e4), null;
             let I = (0, b.convertServerPatchToFullTree)(N, n, D, i, P.UnknownDynamicStaleTime);
             if (v = ev(N, r, D, M, j, w, C, I, a), null !== m && null !== v && v.length > 0) {
@@ -4700,7 +4700,7 @@
                     o = c;
                 for (let t = 0; t < l.length; t += 2) {
                     let r = l[t];
-                    if (o ? .slots ? .[r] === void 0) return null !== s && e_(s, e + 1e4), null;
+                    if (o ?.slots ?.[r] === void 0) return null !== s && e_(s, e + 1e4), null;
                     o = o.slots[r]
                 }! function e(t, r, n, a, l, i, o) {
                     let s = l[0],
@@ -4778,7 +4778,7 @@
     function eS(e) {}
 
     function eb(e, t) {
-        let r = parseInt(t.headers.get(i.NEXT_ROUTER_STALE_TIME_HEADER) ? ? "", 10);
+        let r = parseInt(t.headers.get(i.NEXT_ROUTER_STALE_TIME_HEADER) ?? "", 10);
         return e + (isNaN(r) ? _.STATIC_STALETIME_MS : A(r))
     }
     async function eT(e, t, r) {
@@ -4910,7 +4910,7 @@
                 r = (0, d.urlToUrlWithoutFlightMarker)(new URL(t.url)),
                 n = t.redirected ? r : e,
                 l = t.headers.get("content-type") || "",
-                u = !!t.headers.get("vary") ? .includes(i.NEXT_URL),
+                u = !!t.headers.get("vary") ?.includes(i.NEXT_URL),
                 o = !!t.headers.get(i.NEXT_DID_POSTPONE_HEADER);
             if (!l.startsWith(i.RSC_CONTENT_TYPE_HEADER) || !t.ok || !t.body) return e.hash && (r.hash = e.hash), m(r.toString());
             let s = t.flightResponsePromise;
@@ -4918,7 +4918,7 @@
                 allowPartialStream: o
             }));
             let [f, h] = await Promise.all([s, t.cacheData]);
-            if ((t.headers.get(y.NEXT_NAV_DEPLOYMENT_ID_HEADER) ? ? f.b) !== (0, p.getNavigationBuildId)()) return m(t.url);
+            if ((t.headers.get(y.NEXT_NAV_DEPLOYMENT_ID_HEADER) ?? f.b) !== (0, p.getNavigationBuildId)()) return m(t.url);
             let _ = (0, c.normalizeFlightData)(f.f);
             if ("string" == typeof _) return m(_);
             let v = null !== h ? await S(h, f, a) : null;
@@ -4929,11 +4929,11 @@
                 couldBeIntercepted: u,
                 supportsPerSegmentPrefetching: f.S,
                 postponed: o,
-                dynamicStaleTime: f.d ? ? g.UnknownDynamicStaleTime,
+                dynamicStaleTime: f.d ?? g.UnknownDynamicStaleTime,
                 staticStageData: v,
-                runtimePrefetchStream: f.p ? ? null,
+                runtimePrefetchStream: f.p ?? null,
                 responseHeaders: t.headers,
-                debugInfo: s._debugInfo ? ? null
+                debugInfo: s._debugInfo ?? null
             }
         } catch (t) {
             return E || console.error(`Failed to fetch RSC payload for ${e}. Falling back to browser navigation.`, t), e.toString()
@@ -5027,7 +5027,7 @@
             callServer: o.callServer,
             findSourceMapURL: s.findSourceMapURL,
             debugChannel: n && n(t),
-            unstable_allowPartialStream: r ? .allowPartialStream
+            unstable_allowPartialStream: r ?.allowPartialStream
         })
     }
     "u" > typeof window && (window.addEventListener("pagehide", () => {
@@ -5050,7 +5050,7 @@
                 if (Array.isArray(a) && Array.isArray(l)) {
                     if (a[0] !== l[0] || a[2] !== l[2]) return !0
                 } else if (a !== l) return !0;
-                let u = ((t[4] ? ? 0) & n.PrefetchHint.IsRootLayout) != 0,
+                let u = ((t[4] ?? 0) & n.PrefetchHint.IsRootLayout) != 0,
                     i = (r.prefetchHints & n.PrefetchHint.IsRootLayout) != 0;
                 if (u) return !i;
                 if (i) return !0;
@@ -5212,7 +5212,7 @@
                             renderedSearch: l
                         }, i
                     }(l, n, m, o)), f = null, E = null);
-                    let P = e(t, r, null !== a ? a[n] : void 0, o, u, s, c, x, f ? ? null, E, y, _, v || D, m, $, R);
+                    let P = e(t, r, null !== a ? a[n] : void 0, o, u, s, c, x, f ?? null, E, y, _, v || D, m, $, R);
                     if (null === P) return null;
                     X.set(n, P), q[n] = P.node;
                     let S = P.route;
@@ -5258,7 +5258,7 @@
             m = null;
         if (null !== c)
             for (let t in h.slots = m = {}, g = new Map, c) {
-                let a = O(e, c[t], r, n, (null !== f ? f[t] : null) ? ? null, l, u, i || p, o);
+                let a = O(e, c[t], r, n, (null !== f ? f[t] : null) ?? null, l, u, i || p, o);
                 g.set(t, a), m[t] = a.node;
                 let s = a.route;
                 y[t] = s;
@@ -5478,7 +5478,7 @@
                     isResponsePartial: r
                 } = u.staticStageData;
                 (0, g.getStaleAt)(i, e.s).then(n => {
-                    let a = u.responseHeaders.get(m.NEXT_NAV_DEPLOYMENT_ID_HEADER) ? ? e.b;
+                    let a = u.responseHeaders.get(m.NEXT_NAV_DEPLOYMENT_ID_HEADER) ?? e.b;
                     (0, g.writeStaticStageResponseIntoCache)(i, e.f, a, e.h, n, t, u.renderedSearch, r)
                 }).catch(() => {})
             }
@@ -5716,7 +5716,7 @@
         if (t === u.DEFAULT_SEGMENT_KEY || l.INTERCEPTION_ROUTE_MARKERS.some(e => t.startsWith(e))) return;
         if (t.startsWith(u.PAGE_SEGMENT_KEY)) return "";
         let r = [s(t)],
-            n = e[1] ? ? {},
+            n = e[1] ?? {},
             a = n.children ? f(n.children) : void 0;
         if (void 0 !== a) r.push(a);
         else
@@ -5761,7 +5761,7 @@
             })(t[0]);
             if (r === u.DEFAULT_SEGMENT_KEY) return;
             if ("page" === r) return [r];
-            let n = t[1] ? ? {},
+            let n = t[1] ?? {},
                 a = n.children ? e(n.children) : void 0;
             if (void 0 !== a) return "" === r ? a : [o(r), ...a];
             for (let [t, a] of Object.entries(n)) {
@@ -5777,7 +5777,7 @@
         let r = function e(t, r) {
             let [n, a] = t, [u, o] = r, c = s(n), d = s(u);
             if (l.INTERCEPTION_ROUTE_MARKERS.some(e => c.startsWith(e) || d.startsWith(e))) return "";
-            if (!(0, i.matchSegment)(n, u)) return f(r) ? ? "";
+            if (!(0, i.matchSegment)(n, u)) return f(r) ?? "";
             for (let t in a)
                 if (o[t]) {
                     let r = e(a[t], o[t]);
@@ -5970,7 +5970,7 @@
                     isResponsePartial: r
                 } = j;
                 (0, s.getStaleAt)(e, t.s).then(n => {
-                    let a = D.get(o.NEXT_NAV_DEPLOYMENT_ID_HEADER) ? ? t.b;
+                    let a = D.get(o.NEXT_NAV_DEPLOYMENT_ID_HEADER) ?? t.b;
                     (0, s.writeStaticStageResponseIntoCache)(e, t.f, a, t.h, n, p, A, r)
                 }).catch(() => {})
             }
@@ -6080,7 +6080,7 @@
                         h = {};
                     for (let t in c) {
                         let r = c[t],
-                            o = null !== f ? f[t] ? ? null : null;
+                            o = null !== f ? f[t] ?? null : null;
                         if (t === s) {
                             let s = e(r, o, n, a, l, u, i + 2);
                             d[t] = s.tree, h[t] = s.data
@@ -6276,7 +6276,7 @@
         o ? (r = o.tree, i = o.renderedSearch) : (r = e.tree, i = e.renderedSearch);
         let s = new URL(e.canonicalUrl, location.origin),
             c = t.url,
-            f = (0, n.extractPathFromFlightRouterState)(r) ? ? c.pathname,
+            f = (0, n.extractPathFromFlightRouterState)(r) ?? c.pathname,
             d = Date.now(),
             h = {
                 separateRefreshUrls: null,
@@ -6501,14 +6501,14 @@
             headers: b,
             body: S
         });
-        if ("1" === A.headers.get(u.NEXT_ACTION_NOT_FOUND_HEADER)) throw Object.defineProperty(new i.UnrecognizedActionError(`Server Action "${r}" was not found on the server. 
+        if ("1" === A.headers.get(u.NEXT_ACTION_NOT_FOUND_HEADER)) throw Object.defineProperty(new i.UnrecognizedActionError(`Server Action "${r}" was not found on the server.
 Read more: https://nextjs.org/docs/messages/failed-to-find-server-action`), "__NEXT_ERROR_CODE", {
             value: "E715",
             enumerable: !1,
             configurable: !0
         });
         let N = A.headers.get("x-action-redirect"),
-            [M, D] = N ? .split(";") || [];
+            [M, D] = N ?.split(";") || [];
         switch (D) {
             case "push":
                 f = "push";
@@ -6548,7 +6548,7 @@ Read more: https://nextjs.org/docs/messages/failed-to-find-server-action`), "__N
                     debugChannel: n && n(b)
                 });
             d = U ? void 0 : t.a, x = t.i;
-            let r = A.headers.get(P.NEXT_NAV_DEPLOYMENT_ID_HEADER) ? ? t.b;
+            let r = A.headers.get(P.NEXT_NAV_DEPLOYMENT_ID_HEADER) ?? t.b;
             if (void 0 !== r && r !== (0, R.getNavigationBuildId)());
             else {
                 let e = (0, h.normalizeFlightData)(t.f);
@@ -6856,7 +6856,7 @@ Read more: https://nextjs.org/docs/messages/failed-to-find-server-action`), "__N
                 });
                 return v
             }();
-            switch (t ? .kind ? ? l.PrefetchKind.AUTO) {
+            switch (t ?.kind ?? l.PrefetchKind.AUTO) {
                 case l.PrefetchKind.AUTO:
                     r = s.FetchStrategy.PPR;
                     break;
@@ -6865,7 +6865,7 @@ Read more: https://nextjs.org/docs/messages/failed-to-find-server-action`), "__N
                     break;
                 default:
                     r = s.FetchStrategy.PPR
-            }(0, c.prefetch)(e, n.state.nextUrl, n.state.tree, r, t ? .onInvalidate ? ? null)
+            }(0, c.prefetch)(e, n.state.nextUrl, n.state.tree, r, t ?.onInvalidate ?? null)
         },
         replace: (e, t) => {
             if ((0, y.isJavaScriptURLString)(e)) throw Object.defineProperty(Error("Next.js has blocked a javascript: URL as a security precaution."), "__NEXT_ERROR_CODE", {
@@ -6874,7 +6874,7 @@ Read more: https://nextjs.org/docs/messages/failed-to-find-server-action`), "__N
                 configurable: !0
             });
             (0, i.startTransition)(() => {
-                P(e, "replace", t ? .scroll === !1 ? l.ScrollBehavior.NoScroll : l.ScrollBehavior.Default, null, t ? .transitionTypes)
+                P(e, "replace", t ?.scroll === !1 ? l.ScrollBehavior.NoScroll : l.ScrollBehavior.Default, null, t ?.transitionTypes)
             })
         },
         push: (e, t) => {
@@ -6884,7 +6884,7 @@ Read more: https://nextjs.org/docs/messages/failed-to-find-server-action`), "__N
                 configurable: !0
             });
             (0, i.startTransition)(() => {
-                P(e, "push", t ? .scroll === !1 ? l.ScrollBehavior.NoScroll : l.ScrollBehavior.Default, null, t ? .transitionTypes)
+                P(e, "push", t ?.scroll === !1 ? l.ScrollBehavior.NoScroll : l.ScrollBehavior.Default, null, t ?.transitionTypes)
             })
         },
         refresh: () => {

@@ -231,7 +231,7 @@
                 if (null === r || !r.current) return;
                 let n = null,
                     a = e.hashFragment;
-                if (a && (n = "top" === a ? document.body : document.getElementById(a) ? ? document.getElementsByName(a)[0]), n || (n = "u" < typeof window ? null : (0, v.findDOMNode)(this)), n instanceof Element) {
+                if (a && (n = "top" === a ? document.body : document.getElementById(a) ?? document.getElementsByName(a)[0]), n || (n = "u" < typeof window ? null : (0, v.findDOMNode)(this)), n instanceof Element) {
                     for (; !(n instanceof HTMLElement) || function(e) {
                             if (["sticky", "fixed"].includes(getComputedStyle(e).position)) return !0;
                             let t = e.getBoundingClientRect();
@@ -382,7 +382,7 @@
         } = v, D = E[0], M = null === R ? [e] : R.concat([D, e]), I = E[1][e], F = O.slots;
         (void 0 === I || null === F) && (0, l.use)(d.unresolvedThenable);
         let $ = I[0],
-            L = F[e] ? ? null,
+            L = F[e] ?? null,
             U = (0, g.createRouterCacheKey)($, !0),
             X = (0, y.useRouterBFCache)(I, L, U),
             V = [];
@@ -408,7 +408,7 @@
                         else return e + "/";
                     return e[1] + "/"
                 }(g),
-                v = _ ? ? N,
+                v = _ ?? N,
                 E = void 0 === _ ? void 0 : N,
                 O = (0, s.jsxs)(w, {
                     cacheNode: l,
@@ -888,7 +888,7 @@
             enumerable: !1,
             configurable: !0
         });
-        throw Error.captureStackTrace(r, t), e.invalidDynamicUsageError ? ? = r, r
+        throw Error.captureStackTrace(r, t), e.invalidDynamicUsageError ??= r, r
     }
 
     function c() {
@@ -1343,7 +1343,7 @@
                     if ("symbol" == typeof r) return o.ReflectAdapter.set(t, r, n, a);
                     let i = r.toLowerCase(),
                         s = Object.keys(e).find(e => e.toLowerCase() === i);
-                    return o.ReflectAdapter.set(t, s ? ? r, n, a)
+                    return o.ReflectAdapter.set(t, s ?? r, n, a)
                 },
                 has(t, r) {
                     if ("symbol" == typeof r) return o.ReflectAdapter.has(t, r);
@@ -1803,7 +1803,7 @@
             if (t) switch (t.type) {
                 case "request":
                 case "validation-client":
-                    e = t.validationSampleTracking ? ? null
+                    e = t.validationSampleTracking ?? null
             }
             if (!e) throw Object.defineProperty(new u.InvariantError("Expected to have a workUnitStore that provides validationSampleTracking"), "__NEXT_ERROR_CODE", {
                 value: "E1110",
@@ -1995,7 +1995,7 @@
                     } else r.push(n)
                 }
                 return r.join("/")
-            }(e, t ? ? {}),
+            }(e, t ?? {}),
             a = "";
         if (r) {
             let e = (function(e) {
@@ -2083,7 +2083,7 @@
                     let {
                         createExhaustiveSearchParamsProxy: o
                     } = e.r(59099);
-                    return Promise.resolve(t = o(t, new Set(Object.keys((null == (a = n.validationSamples) ? void 0 : a.searchParams) ? ? {})), r.route))
+                    return Promise.resolve(t = o(t, new Set(Object.keys((null == (a = n.validationSamples) ? void 0 : a.searchParams) ?? {})), r.route))
                 }(t, r, n);
             case "prerender-runtime":
                 throw Object.defineProperty(new u.InvariantError("createSearchParamsFromClient should not be called in a runtime prerender."), "__NEXT_ERROR_CODE", {
@@ -2262,7 +2262,7 @@
         if (n.validationSamples) {
             let {
                 createExhaustiveSearchParamsProxy: a
-            } = e.r(59099), o = new Set(Object.keys(n.validationSamples.searchParams ? ? {}));
+            } = e.r(59099), o = new Set(Object.keys(n.validationSamples.searchParams ?? {}));
             t = a(t, o, r.route)
         }
         return (a ? n.asyncApiPromises.earlySharedSearchParamsParent : n.asyncApiPromises.sharedSearchParamsParent).then(() => t)
@@ -2488,7 +2488,7 @@
                 if (s.asyncApiPromises && s.validationSamples) return function(t, r, n, a, o) {
                     let {
                         createExhaustiveParamsProxy: i
-                    } = e.r(59099), s = i(t, new Set(Object.keys(n.params ? ? {})), r.route);
+                    } = e.r(59099), s = i(t, new Set(Object.keys(n.params ?? {})), r.route);
                     return (o ? a.earlySharedParamsParent : a.sharedParamsParent).then(() => s)
                 }(t, i, s.validationSamples, s.asyncApiPromises, a);
                 if (s.asyncApiPromises && function(e, t) {
@@ -2602,7 +2602,7 @@
         let {
             createExhaustiveParamsProxy: a
         } = e.r(59099);
-        return Promise.resolve(a(t, new Set(Object.keys((null == n ? void 0 : n.params) ? ? {})), r.route))
+        return Promise.resolve(a(t, new Set(Object.keys((null == n ? void 0 : n.params) ?? {})), r.route))
     }
     let R = new WeakMap,
         w = {

@@ -9831,7 +9831,7 @@
         };
 
     function d(e, t) {
-        let n, r = t.errorBoundary ? .constructor;
+        let n, r = t.errorBoundary ?.constructor;
         if (n = n || r === s.ErrorBoundaryHandler && t.errorBoundary.props.errorComponent === c.default) return p(e);
         (0, i.isBailoutToCSRError)(e) || (0, o.isNextRouterError)(e) || f.originConsoleError(e)
     }
@@ -9861,7 +9861,7 @@
         let [t, n] = (0, r.useState)(null);
         (0, r.useEffect)(() => (n(function() {
             let e = document.getElementsByName(a)[0];
-            if (e ? .shadowRoot ? .childNodes[0]) return e.shadowRoot.childNodes[0]; {
+            if (e ?.shadowRoot ?.childNodes[0]) return e.shadowRoot.childNodes[0]; {
                 let e = document.createElement(a);
                 e.style.cssText = "position:absolute";
                 let t = document.createElement("div");
@@ -9871,7 +9871,7 @@
             }
         }()), () => {
             let e = document.getElementsByTagName(a)[0];
-            e ? .isConnected && document.body.removeChild(e)
+            e ?.isConnected && document.body.removeChild(e)
         }), []);
         let [i, u] = (0, r.useState)(""), s = (0, r.useRef)(void 0);
         return (0, r.useEffect)(() => {
@@ -10077,9 +10077,9 @@
     function O(e) {
         null == e && (e = {});
         let t = window.history.state,
-            n = t ? .__NA;
+            n = t ?.__NA;
         n && (e.__NA = n);
-        let r = t ? .__PRIVATE_NEXTJS_INTERNALS_TREE;
+        let r = t ?.__PRIVATE_NEXTJS_INTERNALS_TREE;
         return r && (e.__PRIVATE_NEXTJS_INTERNALS_TREE = r), e
     }
 
@@ -10117,7 +10117,7 @@
             void 0 !== e ? window.next.__internal_src_page = e : delete window.next.__internal_src_page
         }, [s.tree]), (0, o.useEffect)(() => {
             function e(e) {
-                e.persisted && window.history.state ? .__PRIVATE_NEXTJS_INTERNALS_TREE && (C.pendingMpaPath = void 0, (0, f.dispatchAppRouterAction)({
+                e.persisted && window.history.state ?.__PRIVATE_NEXTJS_INTERNALS_TREE && (C.pendingMpaPath = void 0, (0, f.dispatchAppRouterAction)({
                     type: u.ACTION_RESTORE,
                     url: new URL(window.location.href),
                     historyState: window.history.state.__PRIVATE_NEXTJS_INTERNALS_TREE
@@ -10153,19 +10153,19 @@
                 t = window.history.replaceState.bind(window.history),
                 n = e => {
                     let t = window.location.href,
-                        n = window.history.state ? .__PRIVATE_NEXTJS_INTERNALS_TREE;
+                        n = window.history.state ?.__PRIVATE_NEXTJS_INTERNALS_TREE;
                     (0, o.startTransition)(() => {
                         (0, f.dispatchAppRouterAction)({
                             type: u.ACTION_RESTORE,
-                            url: new URL(e ? ? t, t),
+                            url: new URL(e ?? t, t),
                             historyState: n
                         })
                     })
                 };
             window.history.pushState = function(t, r, l) {
-                return t ? .__NA || t ? ._N || (t = O(t), l && n(l)), e(t, r, l)
+                return t ?.__NA || t ?._N || (t = O(t), l && n(l)), e(t, r, l)
             }, window.history.replaceState = function(e, r, l) {
-                return e ? .__NA || e ? ._N || (e = O(e), l && n(l)), t(e, r, l)
+                return e ?.__NA || e ?._N || (e = O(e), l && n(l)), t(e, r, l)
             };
             let r = e => {
                 if (e.state) {
@@ -10308,7 +10308,7 @@
             head: N
         } = (0, a.getFlightDataPartsFromPath)(h[0]), C = p ? (0, r.createHrefFromUrl)(p) : _, T = {
             metadataVaryPath: null
-        }, O = (0, i.convertRootFlightRouterStateToRouteTree)(x, g, T), z = T.metadataVaryPath, L = (0, o.createInitialCacheNodeForHydration)(e, O, P, N, (0, s.computeDynamicStaleAt)(e, E ? ? s.UnknownDynamicStaleTime));
+        }, O = (0, i.convertRootFlightRouterStateToRouteTree)(x, g, T), z = T.metadataVaryPath, L = (0, o.createInitialCacheNodeForHydration)(e, O, P, N, (0, s.computeDynamicStaleAt)(e, E ?? s.UnknownDynamicStaleTime));
         if (null !== p && null !== z) {
             if ((0, f.discoverKnownRoute)(Date.now(), p.pathname, null, null, O, z, v, C, y, !1), null !== P && void 0 !== b)
                 if (void 0 !== w && null != n)(0, c.decodeStaticStage)(n, w, void 0).then(async e => {
@@ -10320,9 +10320,9 @@
                     let e = Date.now();
                     (0, i.getStaleAt)(e, b).then(t => {
                         (0, i.writeStaticStageResponseIntoCache)(e, h, void 0, S, t, x, g, !1)
-                    }).catch(() => {}), n ? .cancel()
+                    }).catch(() => {}), n ?.cancel()
                 }
-            else n ? .cancel();
+            else n ?.cancel();
             null != k && (0, i.processRuntimePrefetchStream)(Date.now(), k, x, g).then(e => {
                 null !== e && (0, i.writeDynamicRenderResponseIntoCache)(Date.now(), u.FetchStrategy.PPRRuntime, e.flightDatas, e.buildId, e.isResponsePartial, e.headVaryParams, e.staleAt, e.navigationSeed, null)
             }).catch(() => {})
@@ -10343,7 +10343,7 @@
             },
             canonicalUrl: C,
             renderedSearch: g,
-            nextUrl: ((0, l.extractPathFromFlightRouterState)(x) || p ? .pathname) ? ? null,
+            nextUrl: ((0, l.extractPathFromFlightRouterState)(x) || p ?.pathname) ?? null,
             previousNextUrl: null,
             debugInfo: null
         }

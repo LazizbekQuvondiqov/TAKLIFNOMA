@@ -661,7 +661,7 @@
             case "validation-client":
                 if (e.renderResumeDataCache) return e.renderResumeDataCache;
             case "prerender-ppr":
-                return e.prerenderResumeDataCache ? ? null;
+                return e.prerenderResumeDataCache ?? null;
             case "cache":
             case "private-cache":
             case "unstable-cache":
@@ -696,7 +696,7 @@
         switch (e.type) {
             case "request":
             case "prerender-runtime":
-                return e.stagedRendering ? ? null;
+                return e.stagedRendering ?? null;
             case "prerender":
             case "prerender-client":
             case "validation-client":
@@ -794,7 +794,7 @@
                 if (n) i = t[1][r];
                 else {
                     let e = t[1];
-                    i = e.children ? ? Object.values(e)[0]
+                    i = e.children ?? Object.values(e)[0]
                 }
                 if (!i) return a;
                 let u = o(i[0]);
@@ -934,7 +934,7 @@
     }
 
     function c(e, t) {
-        throw s(e, t ? ? = u ? .getStore() ? .isAction ? "push" : "replace", o.RedirectStatusCode.TemporaryRedirect)
+        throw s(e, t ??=u ?.getStore() ?.isAction ? "push" : "replace", o.RedirectStatusCode.TemporaryRedirect)
     }
 
     function l(e, t = "replace") {
@@ -2168,13 +2168,13 @@ ${t}`))
         } = {};
 
     function y() {
-        p ? .("useSearchParams()");
+        p ?.("useSearchParams()");
         let e = (0, o.useContext)(u.SearchParamsContext);
         return (0, o.useMemo)(() => e ? new u.ReadonlyURLSearchParams(e) : null, [e])
     }
 
     function _() {
-        return f ? .("usePathname()"), (0, o.useContext)(u.PathnameContext)
+        return f ?.("usePathname()"), (0, o.useContext)(u.PathnameContext)
     }
 
     function E() {
@@ -2188,17 +2188,17 @@ ${t}`))
     }
 
     function b() {
-        return f ? .("useParams()"), (0, o.useContext)(u.PathParamsContext)
+        return f ?.("useParams()"), (0, o.useContext)(u.PathParamsContext)
     }
 
     function R(e = "children") {
-        f ? .("useSelectedLayoutSegments()");
+        f ?.("useSelectedLayoutSegments()");
         let t = (0, o.useContext)(i.LayoutRouterContext);
         return t ? (0, s.getSelectedLayoutSegmentPath)(t.parentTree, e) : null
     }
 
     function v(e = "children") {
-        f ? .("useSelectedLayoutSegment()"), (0, o.useContext)(u.NavigationPromisesContext);
+        f ?.("useSelectedLayoutSegment()"), (0, o.useContext)(u.NavigationPromisesContext);
         let t = R(e);
         return (0, s.computeSelectedLayoutSegment)(t, e)
     }("function" == typeof r.default || "object" == typeof r.default && null !== r.default) && void 0 === r.default.__esModule && (Object.defineProperty(r.default, "__esModule", {

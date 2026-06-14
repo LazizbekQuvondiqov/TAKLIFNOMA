@@ -50,7 +50,7 @@
                 }, i() && !1 === e.debug && (n.dataset.debug = "false"), document.head.appendChild(n)
             }({
                 framework: e.framework || "react",
-                basePath: e.basePath ? ? function() {
+                basePath: e.basePath ?? function() {
                     if (void 0 !== t.default && void 0 !== t.default.env) return t.default.env.REACT_APP_VERCEL_OBSERVABILITY_BASEPATH
                 }(),
                 ...void 0 !== e.route && {
